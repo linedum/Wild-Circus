@@ -1,0 +1,351 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two:700|Open+Sans:400,400i,700,700i");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css");
+
+/* -- RESET -- */
+html {
+  box-sizing: border-box;
+  font: 16px/1.25 'Open Sans', Geneva, sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-size: cover;
+  background-color: #000;
+  background-image: url('../img/wild_background-nb.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  padding: 0
+}
+
+p {
+  margin: 0;
+  padding: .75em 0;
+}
+
+/* -- TYPOGRAPHY -- */
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: 'Lobster Two', cursive;
+  font-weight: bold;
+  margin: 0;
+  line-height: 2;
+}
+
+h1, h2, h3 {
+  color: rgba(31, 165, 151, 1);
+}
+
+h4, h5, h6 {
+  color: rgba(247, 147, 30, 1);
+  font-style: italic;
+}
+
+h1 {
+  font-size: 5.653rem;
+}
+
+h2 {
+  font-size: 2.827rem;
+}
+
+h3 {
+  font-size: 1.414rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5, h6 {
+  font-size: .707rem;
+}
+
+a {
+  color: rgba(31, 165, 151, 1);
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: whitesmoke;
+  background-color: rgba(247, 147, 30, 1);
+}
+
+
+/* -- LAYOUT --- */
+.wrap>header {
+  background-color: rgba(31, 165, 151, .55);
+}
+
+.wrap>footer {
+  background-color: rgba(31, 165, 151, .55);
+}
+
+
+/* -- NAVIGATION -- */
+
+.head nav {
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
+  position: relative;
+  font-size: 1.75rem;
+  color: whitesmoke;  
+  overflow: hidden
+}
+
+.head ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+}
+
+.head li {
+  width: 20%;
+  list-style: none;
+  float: left;
+  position: relative;
+}
+
+.head nav a {
+  font-size: 100%;
+  color: whitesmoke;
+  width: 100%;
+  font-variant: small-caps;
+  text-transform: capitalize;
+}
+
+/* -- CONTENT -- */
+#content {
+  height: calc(100vh - (3rem * 2));
+  margin: 0; 
+  padding: 0;
+}
+
+.content-inner {
+  position: relative;
+}
+
+/* -- SLIDING BOXES -- */
+.box {
+  position: relative;
+  width: 10%;
+  height: 100%;
+  float: left;
+  transition: width 1.5s ease-in-out;
+  background-position: 45% center;
+  background-repeat: no-repeat;
+  background-color: #000000;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.box--half {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url('../img/wild-logo.svg');
+  background-size: 50%;
+  position: absolute;
+  right: 0;
+  float: none;
+  width: 50%;
+  z-index: -1;}
+
+.box--wild     {background-image: url('../img/wild_circus.jpg');}
+.box--perf1    {background-image: url('../img/wild_canon-vert.jpg');}
+.box--perf2    {background-image: url('../img/wild_flame.jpg');}
+.box--perf3    {background-image: url('../img/wild_mime-vert.jpg');}
+.box--booking  {background-image: url('../img/wild_parade.jpg')}
+
+
+.no-js .box:hover, .no-js .box:target,
+.box.show {
+  width: 60%;
+}
+
+.box__body {
+  position: relative;
+  display: none;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.no-js .box:hover .box__body,
+.no-js .box:target .box__body,
+.box.show .box__body {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(249, 249, 249, .75);
+}
+
+.box__body-inner {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  opacity: 0;
+  transition: all 3s ease-in-out;
+}
+
+.no-js .box:hover .box__body-inner,
+.no-js .box:target .box__body-inner,
+.show .box__body-inner {
+  opacity: 1;
+}
+
+.box__title {
+  text-align: center;
+}
+
+/* -- BOOKING form -- */
+.register {
+  margin: 0 auto;
+  width: 75%;
+  overflow: hidden;
+}
+
+.register label {
+  display: block;
+  width: 100%;
+  margin-bottom: .75em;
+}
+
+.register span {
+  display: inline-block;
+  padding-bottom: .25rem;
+  width: 5rem;
+}
+
+.register input {
+  width: 100%;
+  margin: 0 auto;
+}
+.register [type="submit"]{
+  background-color: rgba(31, 165, 151, 1);
+  color: whitesmoke;
+  border-width: 0;
+  padding: 5px;
+}
+
+/* -- FOOTER -- */
+
+.foot {
+  color: whitesmoke;
+  clear: both;
+  height: 3rem;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.foot a {
+  color: whitesmoke;
+  font-variant: small-caps;
+  padding: 0 .5em;
+}
+
+
+/*-- MEDIA QUERIES --*/
+@media (max-width: 800px) {
+  /* -- navigation -- */
+  .head nav {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+    height: 2.25rem;
+  }
+
+  /*--CONTENT--*/
+  #content {
+    height: calc(100vh - (2.25rem * 2));
+    overflow: auto;
+    font-size: 14px;
+  }
+
+  .box {
+    display: block;
+    width: 100%;
+    height: 10%;
+    float: none;
+    transition: height 1.5s ease-in-out;
+  }
+
+  .box--half {
+    background-size: 35%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+  }
+
+  .no-js .box:hover, .no-js .box:target,
+  .box.show {
+    width: 100%;
+    height: 60%;
+  }
+
+  .box__body-inner {
+    width: 60vw;
+  }
+
+  .register {
+    width: 90%;
+  }
+
+  .foot {
+    font-size: 1.2rem;
+    line-height: 2.25rem;
+    height: 2.25rem;
+  }
+
+}
+
+@media (max-width: 639px) {
+
+  #content {
+    height: calc(100vh - (2.25rem * 4));
+  }
+
+  .no-js .box:hover, .no-js .box:target,
+  .box.show {
+    height: 100vh;
+  }
+
+  .head nav {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+    height: 2.25rem;
+    height: auto;
+    font-size: 1.75rem;
+    overflow: hidden;
+  }
+
+  .head li {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+    width: 50%;
+  }
+
+  .head li a {
+    font-size: 1.25rem;
+  }
+
+  .register {
+    width: 100%;
+  }
+}
